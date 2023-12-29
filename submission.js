@@ -3,15 +3,14 @@ const findSum = function(array) {
   let sum = 0;
     for (let i = 0; i < array.length; i++) {
       sum = sum + array[i];
-    }
+    };
     return sum;
-
-  
+};  
 
 const findFrequency = function(array) {
   // your code here - don't forget to return an object!
 
-      array.sort();
+    array.sort();
     let length = array.length;
     const frequency = {
         most: array[0],
