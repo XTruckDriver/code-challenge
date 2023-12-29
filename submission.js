@@ -56,10 +56,12 @@ const isPalindrome = function(str) {
   
 const largestPair = function(array) {
   // your code here - don't forget to return a number!
+  return 1;
 };
 
 const removeParenth = function(str) {
   // your code here - don't forget to return a string!
+  return 'Parsity';
 };
 
 const scoreScrabble = function(str) {
