@@ -10,6 +10,31 @@ const findSum = function(array) {
 
 const findFrequency = function(array) {
   // your code here - don't forget to return an object!
+
+      array.sort();
+    let length = array.length;
+    const frequency = {
+        most: array[0],
+        least: array[0]
+    };
+    for (let i = 0, total = 1, most = 1, least = length; i <= length - 1; i++) {
+        if (array[i] != array[i + 1]) {
+            if (total <= least) {
+                frequency["least"] = array[i];
+                least = total;
+            };
+            if (total >= most) {
+                frequency["most"] = array[i];
+                most = total;
+            };
+            total = 1;
+
+        }  else {
+            total++;
+            };
+
+    };
+    return frequency;
 };
 
   
@@ -17,12 +42,12 @@ const findFrequency = function(array) {
 const isPalindrome = function(str) {
   // your code here - don't forget to return a boolean!
    let word = str.toLowerCase();
-    let length = str.length;
+    let length = word.length;
     let end = length -1;
 
     for (let i = 0; i < length/2; i++) {
         if (word[i] != word[end]) return false;
-        else end--
+        else end--;
     }
     return true;
 };
@@ -42,7 +67,7 @@ const scoreScrabble = function(str) {
 
     let word = str.toLowerCase();
     let score = 0;
-    let length = str.length;
+    let length = word.length;
 
     for (let i = 0; i < length; i++) {
         switch (word[i]) {
