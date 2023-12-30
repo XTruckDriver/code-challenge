@@ -60,7 +60,18 @@ const largestPair = function(array) {
 
 const removeParenth = function(str) {
   // your code here - don't forget to return a string!
-  return 'Parsity';
+
+  let length = str.length;
+  let opening, closing = 0;
+  
+  for (let i = 0; i <= length; i++) {
+      if (str.codePointAt(i) === 40) opening = i;
+      if (str.codePointAt(i) === 41) closing = i;
+  };
+  
+  let newWord = str.substr(0, opening) + str.substr(closing + 1, length - closing + 1);
+  return newWord;
+ 
 };
 
 const scoreScrabble = function(str) {
