@@ -55,22 +55,31 @@ const isPalindrome = function(str) {
   
 const largestPair = function(array) {
   // your code here - don't forget to return a number!
-  return 1;
+
+    let length = array.length;
+    let largestProduct = 0;
+    
+    for (let i = 0; i < length; i++) {
+        if ((array[i] * array[i + 1]) >= largestProduct) largestProduct = array[i] * array[i + 1];
+    };
+
+    return largestProduct;
+  
 };
 
 const removeParenth = function(str) {
   // your code here - don't forget to return a string!
 
-  let length = str.length;
-  let opening, closing = 0;
-  
-  for (let i = 0; i <= length; i++) {
-      if (str.codePointAt(i) === 40) opening = i;
-      if (str.codePointAt(i) === 41) closing = i;
-  };
-  
-  let newWord = str.substr(0, opening) + str.substr(closing + 1, length - closing + 1);
-  return newWord;
+    let length = str.length;
+    let opening, closing = 0;
+    
+    for (let i = 0; i <= length; i++) {
+        if (str.codePointAt(i) === 40) opening = i;
+        if (str.codePointAt(i) === 41) closing = i;
+    };
+    
+    let newWord = str.substr(0, opening) + str.substr(closing + 1, length - closing + 1);
+    return newWord;
  
 };
 
